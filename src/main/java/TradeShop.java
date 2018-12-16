@@ -73,7 +73,6 @@ public class TradeShop {
             fruits = mapper.readValue(reader, new TypeReference<ArrayList<Fruit>>() {
             });
             this.fruits.addAll(fruits);
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
