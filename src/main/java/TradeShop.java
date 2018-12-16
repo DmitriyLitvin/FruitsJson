@@ -64,7 +64,7 @@ public class TradeShop {
     }
 
     public void load(String pathToJsonFile) {
-        this.fruits.clear();
+        this.fruits = new ArrayList<>();
         File file = new File(pathToJsonFile);
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<Fruit> fruits;
