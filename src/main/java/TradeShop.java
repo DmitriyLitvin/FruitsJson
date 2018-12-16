@@ -82,7 +82,6 @@ public class TradeShop {
 
     public List<Fruit> getSpoiledFruits(Date date) {
         List<Fruit> spoiledFruits = new ArrayList<Fruit>();
-
         for (int i = 0; i < fruits.size(); i++) {
             Date dateOfDelivery = fruits.get(i).getDateOfDelivery();
             int expirationDate = fruits.get(i).getExpirationDate();
