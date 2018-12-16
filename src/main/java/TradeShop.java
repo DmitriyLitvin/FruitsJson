@@ -4,16 +4,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class TradeShop {
-    private List<Fruit> fruits = new ArrayList<Fruit>();
+    private List<Fruit> fruits = new ArrayList<>();
     private final long DURATION_OF_DAY = 86400000; //24 * 60 * 60 * 1000 milli seconds;
 
     public void addFruitsToDatabase(Fruit fruit) {
@@ -73,7 +75,6 @@ public class TradeShop {
             fruits = mapper.readValue(reader, new TypeReference<ArrayList<Fruit>>() {
             });
             this.fruits.addAll(fruits);
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -83,7 +84,6 @@ public class TradeShop {
 
     public List<Fruit> getSpoiledFruits(Date date) {
         List<Fruit> spoiledFruits = new ArrayList<Fruit>();
-
         for (int i = 0; i < fruits.size(); i++) {
             Date dateOfDelivery = fruits.get(i).getDateOfDelivery();
             int expirationDate = fruits.get(i).getExpirationDate();
@@ -154,19 +154,18 @@ public class TradeShop {
     }
 
     private String readString(String pathToJsonFile) {
-        String str = "";
+        String dataFromJsonFile = "";
+        Path path = Paths.get(pathToJsonFile);
         try {
-            FileReader reader = new FileReader(pathToJsonFile);
-            int c;
-
-            while ((c = reader.read()) != -1) {
-                str += (char) c;
+            List<String> strings = Files.readAllLines(path);
+            for (String string:strings) {
+                dataFromJsonFile += string;
             }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        return str;
+        return dataFromJsonFile;
     }
 
     @Override
