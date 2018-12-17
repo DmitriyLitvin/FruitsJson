@@ -139,7 +139,6 @@ public class TradeShop {
         }
 
         return addedFruits;
-
     }
 
     List<Fruit> getAddedFruits(Date date, TypeOfFruit type) {
