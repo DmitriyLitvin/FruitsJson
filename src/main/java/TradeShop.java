@@ -67,18 +67,18 @@ public class TradeShop {
         File file = new File(pathToJsonFile);
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<Fruit> fruits;
-        this.fruits.clear();
 
         try {
             String forDeserialize = readString(pathToJsonFile);
             StringReader reader = new StringReader(forDeserialize);
             fruits = mapper.readValue(reader, new TypeReference<ArrayList<Fruit>>() {
             });
+            this.fruits.clear();
             this.fruits.addAll(fruits);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException("read operation isn't successful");
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("read operation isn't successful");
         }
     }
 
