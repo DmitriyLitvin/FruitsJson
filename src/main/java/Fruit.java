@@ -1,9 +1,11 @@
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Fruit {
     private TypeOfFruit type;
     private int expirationDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dateOfDelivery;
     private double price;
 
