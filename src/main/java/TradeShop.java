@@ -64,10 +64,10 @@ public class TradeShop {
     }
 
     public void load(String pathToJsonFile) {
-        this.fruits = new ArrayList<>();
         File file = new File(pathToJsonFile);
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<Fruit> fruits;
+        this.fruits.clear();
 
         try {
             String forDeserialize = readString(pathToJsonFile);
