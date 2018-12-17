@@ -9,7 +9,7 @@ public class Fruit {
     private Date dateOfDelivery;
     private double price;
 
-    public Fruit () {
+    private Fruit () {
 
     }
 
