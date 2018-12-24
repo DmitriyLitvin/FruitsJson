@@ -17,11 +17,7 @@ import java.util.List;
 public class TradeShop {
     private List<Fruit> fruits = new ArrayList<>();
     private final long DURATION_OF_DAY = 86400000; //24 * 60 * 60 * 1000 milli seconds;
-
-    public void addFruitsToDatabase(Fruit fruit) {
-        fruits.add(fruit);
-    }
-
+    
     public void showDatabase() {
         for (Fruit fruit : fruits) {
             System.out.println(fruit);
