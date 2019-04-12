@@ -1,3 +1,5 @@
+package mate.academy;
+
 public enum TypeOfFruit {
     APPLE,
     BANANA,

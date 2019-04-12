@@ -1,3 +1,5 @@
+package mate.academy;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
@@ -54,7 +56,7 @@ public class Fruit {
 
     @Override
     public String toString() {
-        return "Fruit{" +
+        return "mate.academy.Fruit{" +
                 "type=" + type +
                 ", expirationDate=" + expirationDate +
                 ", dateOfDelivery=" + dateOfDelivery +

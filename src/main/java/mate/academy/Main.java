@@ -1,4 +1,7 @@
+package mate.academy;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
+import mate.academy.Fruit;
 
 import java.io.IOException;
 import java.util.ArrayList;

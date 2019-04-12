@@ -1,6 +1,9 @@
+package mate.academy;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import mate.academy.Fruit;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -165,7 +168,7 @@ public class TradeShop {
 
     @Override
     public String toString() {
-        return "TradeShop{" +
+        return "mate.academy.TradeShop{" +
                 "fruits=" + fruits +
                 '}';
     }
