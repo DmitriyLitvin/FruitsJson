@@ -17,8 +17,10 @@ jobs:
 
     steps:
     - checkout
-    - run:
-        name: Run tests in parallel
+
+    test:
+      override:
+       - mvn test
 
     # Download and cache dependencies
     - restore_cache:
