@@ -16,11 +16,8 @@ jobs:
     working_directory: ~/FruitJson
 
     steps:
-    - checkout
-
-    test:
-      override:
-       - mvn test
+     - checkout
+     - mvn test
 
     # Download and cache dependencies
     - restore_cache:
