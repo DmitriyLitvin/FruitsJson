@@ -16,7 +16,7 @@ jobs:
     working_directory: ~/FruitJson
 
     steps:
-     - checkout
+    - checkout
 
     # Download and cache dependencies
     - restore_cache:
